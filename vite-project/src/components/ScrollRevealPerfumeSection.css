@@ -1,0 +1,115 @@
+.scroll-reveal-section {
+    padding: 6rem 5%;
+    background-color: var(--color-light); /* Base background */
+    min-height: 80vh; /* Give it height */
+    overflow: hidden; /* Important for hiding elements before animation */
+    border-top: 1px solid var(--color-border);
+}
+/* Alternate background color for visual separation */
+.scroll-reveal-section:nth-of-type(even) { /* Style based on order in Homepage */
+     background-color: var(--color-grey);
+}
+
+
+.scroll-reveal-content {
+    display: flex;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Reverse layout */
+.scroll-reveal-section.reverse .scroll-reveal-content {
+    flex-direction: row-reverse;
+}
+
+.reveal-image {
+    flex: 1;
+    max-width: 500px;
+}
+.reveal-image img {
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.reveal-text-content {
+    flex: 1;
+}
+
+/* Removed empty .reveal-item {} ruleset */
+
+.reveal-text-content h2 { /* reveal-title */
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem; /* Larger title */
+}
+.reveal-text-content h4 { /* reveal-notes h4 */
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-gold);
+}
+.reveal-text-content ul { /* reveal-notes ul */
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+.reveal-text-content li {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+.reveal-text-content p { /* reveal-description */
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: none;
+    margin-bottom: 1.5rem; /* Add space before button */
+    opacity: 0.9;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-reveal-content,
+  .scroll-reveal-section.reverse .scroll-reveal-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .reveal-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .reveal-text-content {
+    text-align: center;
+  }
+  .reveal-text-content h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  /* The comment that was here is now removed */
+} /* reveal-button a */
+    /* Add specific button styling if needed */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-reveal-content,
+  .scroll-reveal-section.reverse .scroll-reveal-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .reveal-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .reveal-text-content {
+    text-align: center;
+  }
+  .reveal-text-content h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  /* Removed second empty ruleset potentially here */
+}
