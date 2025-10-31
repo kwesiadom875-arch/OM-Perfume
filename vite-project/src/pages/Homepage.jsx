@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SimpleScrollReveal from '../components/SimpleScrollReveal';
-import ScrollRevealPerfumeSection from '../components/ScrollRevealPerfumeSection'; // <--- THIS LINE WAS MISSING
-import ProductCard from '../components/ProductCard'; 
-
+import SimpleScrollReveal from '../components/SimpleScrollReveal'; // The stable observer component
+import ScrollRevealPerfumeSection from '../components/ScrollRevealPerfumeSection'; // The component that holds the structure
 
 // Placeholder icons
 const IconPlaceholder = ({ label }) => <span style={{ padding: '0 5px', border: '1px solid var(--color-light)', borderRadius: '3px', fontSize: '0.8em', marginRight: '5px', color: 'var(--color-light)', opacity: '0.7' }}>{label}</span>;
@@ -39,7 +37,7 @@ const featuredPerfumes = [
     id: 'aventus',
     brand: "Creed",
     name: "Aventus",
-    imageUrl: "/images/aventus.png", // Corrected placeholder name
+    imageUrl: "/images/aventus.png",
     notes: { top: "Bergamot, Blackcurrant Leaves, Apple, Pineapple", heart: "Pinkberries, Birch, Patchouli, Jasmine", base: "Musk, Oakmoss, Ambergris, Vanilla" },
     spotlightDescription: "Celebrating strength, power, and success, Aventus is a sophisticated fruity and rich blend for the individual who savors a life well-lived.",
     productUrl: "/product/aventus"
@@ -145,7 +143,7 @@ function Homepage() {
       </section>
       {/* --- End Simple Scroll Reveal Section --- */}
 
-      {/* --- 4. Mapped Scroll Reveal Sections --- */}
+      {/* --- 4. Mapped Scroll Reveal Sections (Product Spotlights) --- */}
       {/* Loop through the featuredPerfumes data and render a component for each */}
       {featuredPerfumes.map((perfume, index) => (
         <ScrollRevealPerfumeSection
@@ -155,7 +153,6 @@ function Homepage() {
         />
       ))}
       {/* --- End Mapped Sections --- */}
-
     </main>
   );
 }

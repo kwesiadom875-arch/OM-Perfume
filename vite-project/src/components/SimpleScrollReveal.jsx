@@ -11,7 +11,7 @@ function SimpleScrollReveal({ children, triggerMargin = '0px', animationDelay = 
         // When the element intersects (enters the viewport)
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // ⚠️ Stop observing immediately after it becomes visible
+          // Stop observing immediately after it becomes visible
           if (observerRef.current) {
               observerRef.current.unobserve(entry.target);
           }
@@ -19,7 +19,7 @@ function SimpleScrollReveal({ children, triggerMargin = '0px', animationDelay = 
       },
       {
         root: null, // Relative to the viewport
-        rootMargin: triggerMargin, // How far off-screen the element can be to still trigger
+        rootMargin: triggerMargin, 
         threshold: 0.1, // Trigger when 10% of the element is visible
       }
     );

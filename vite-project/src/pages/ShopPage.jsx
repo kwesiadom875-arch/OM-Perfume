@@ -11,7 +11,7 @@ function ShopPage() {
     { id: 'aventus', imageUrl: "https://placehold.co/400x500/F5F5F5/1A1A1A?text=Creed", brand: "Creed", name: "Aventus", price: "600", productUrl: "/product/aventus"},
     { id: 'bleu-chanel', imageUrl: "https://placehold.co/400x500/F5F5F5/1A1A1A?text=Chanel", brand: "Chanel", name: "Bleu de Chanel", price: "350", productUrl: "/product/bleu-chanel"},
     { id: 'sauvage-elixir', imageUrl: "https://placehold.co/400x500/F5F5F5/1A1A1A?text=Dior", brand: "Dior", name: "Sauvage Elixir", price: "480", productUrl: "/product/sauvage-elixir"},
-    { id: 'gypsy-water', imageUrl: "https://placehold.co/400x500/F5F5F5/1A1A1A?text=Byredo", brand: "Byredo", name: "Gypsy Water", productUrl: "/product/gypsy-water"}
+    { id: 'gypsy-water', imageUrl: "https://placehold.co/400x500/F5F5F5/1A1A1A?text=Byredo", brand: "Byredo", name: "Gypsy Water", price: "550", productUrl: "/product/gypsy-water"}
   ];
   // --- End Placeholder Data ---
 
@@ -24,8 +24,6 @@ function ShopPage() {
             <Link to="/">Home</Link> / <span>Wink Collection</span>
         </div>
       </section>
-
-      {/* --- BANNER REMOVED --- */}
 
       {/* 2. Shop Layout (Sidebar + Grid) */}
       <div className="shop-container wink-layout">
@@ -86,6 +84,7 @@ function ShopPage() {
                   name={product.name}
                   productUrl={product.productUrl}
                   price={`$${product.price}`}
+                  oldPrice={`$${(parseFloat(product.price) + 50)}`} // Example old price
                 />
               ))}
             </div>
